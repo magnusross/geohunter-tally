@@ -1,0 +1,19 @@
+[project]
+name = "geohunter-tally"
+version = "0.1.0"
+description = "A CLI tool for tracking game scores and statistics."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+geohunter-tally = "geohunter_tally:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# --- NEW SECTION ---
+# This explicitly tells the builder to include the single python file
+# instead of looking for a folder named 'geohunter_tally'.
+[tool.hatch.build.targets.wheel]
+packages = ["geohunter_tally.py"]
